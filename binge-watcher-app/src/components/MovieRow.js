@@ -10,12 +10,14 @@ import { makeStyles } from "@material-ui/core";
 import { Button } from "@material-ui/core";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
+import {format} from 'date-fns'
 
 const posterURL = "https://image.tmdb.org/t/p/w780/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 600,
+    marginBottom: 20,
   },
   media: {
     height: 0,

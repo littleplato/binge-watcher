@@ -16,6 +16,7 @@ const posterURL = "https://image.tmdb.org/t/p/w780/";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 600,
+    marginBottom: 20,
   },
   media: {
     height: 0,

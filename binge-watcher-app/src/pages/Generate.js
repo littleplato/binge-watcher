@@ -14,6 +14,7 @@ dotenv.config();
 
 const APIKEY = process.env.REACT_APP_TMDB_API_KEY;
 let tempTime = 0
+let runTimeTotal = 0
 
 const discoverURL = {
   base: "https://api.themoviedb.org/3/discover/",
@@ -104,6 +105,7 @@ export default function Generate() {
           }
         }
       }
+      runTimeTotal = runtime
       setSuggestions(curatedShows)
       console.log("HERE1", curatedShows)
       console.log("here2", suggestions)
@@ -116,7 +118,7 @@ export default function Generate() {
   return (
     <div>
       <Container>
-        <Typography variant="h3">Generate Watchplan</Typography>
+        <Typography variant="h3" gutterBottom>Generate Watchplan</Typography>
         {mediumSelection === "show" ? (
           <Medium handleMedium={handleMedium} />
         ) : (
@@ -132,7 +134,7 @@ export default function Generate() {
         ) : (
           ""
         )}
-        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions}/>}
+        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal}/>}
       </Container>
     </div>
   );
