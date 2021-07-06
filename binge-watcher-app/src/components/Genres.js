@@ -8,7 +8,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import genresList from "../utils/genresList";
 
 let genreMedium = [...genresList.movie];
-let IDsToPass = [];
+let IDsToPass = "";
 
 const useStyles = makeStyles({
   question: {
@@ -39,8 +39,8 @@ export default function Genres(props) {
         IDsToPass = [...IDsToPass, ...genre.IDs];
       }
     }
-    console.log(IDsToPass);
-    props.handleGenre(IDsToPass);
+    console.log(IDsToPass === "");
+    {props.handleGenre(IDsToPass)}
   };
 
   const checkboxes = genreMedium.map((genre) => (

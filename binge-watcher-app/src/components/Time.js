@@ -59,7 +59,7 @@ export default function Time(props) {
         type="submit"
         variant="contained"
         color="primary"
-        onClick={() => props.handleTime(setTime)}
+        onClick={() => props.fetchShows(setTime)}
         endIcon={<KeyboardArrowRightIcon />}
       >
         Fetch Shows!
