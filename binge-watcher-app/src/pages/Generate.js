@@ -34,7 +34,7 @@ export default function Generate() {
         <Typography variant="h3">Generate Watchplan</Typography>
         {mediumSelection === "show" ? <Medium handleMedium={handleMedium} /> : ""}
         {mediumSelection !== "show" &&  genreSelection === null ? <Genres handleGenre={handleGenre}/> : ""}
-        {genreSelection !== null && timeSelection === 0 ? <Time handleTime={handleTime} />: ""}
+        {genreSelection !== null && timeSelection === 0 ? <Time handleTime={handleTime} medium={mediumSelection}/>: ""}
 
       </Container>
     </div>
