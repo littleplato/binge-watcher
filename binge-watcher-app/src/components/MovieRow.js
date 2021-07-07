@@ -32,7 +32,7 @@ export default function MovieRow({ data }) {
 
   const toggleHeart = () => {
     if(heartIcon.state === "unloved") {
-      setHeartIcon({state: "loved", icon: <FavoriteIcon className={classes.heart} style={{ color: "secondary" }}/>})
+      setHeartIcon({state: "loved", icon: <FavoriteIcon className={classes.heart} color="secondary"/>})
     } else if (heartIcon.state === "loved") {
       setHeartIcon({state: "unloved", icon: <FavoriteBorderIcon/>})
     }

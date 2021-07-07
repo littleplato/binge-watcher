@@ -42,11 +42,22 @@ const useStyles = makeStyles({
   },
 });
 
+let testWatchPlan = [{
+  suggestions: [],
+  medium: "none"
+}]
+
 function App() {
   const classes = useStyles();
-
-  const [watchplanList, setWatchplanList] = useState([]);
+  const [watchplanList, setWatchplanList] = useState([{
+    suggestions: [],
+    medium: "none"
+  }]);
   const [mediumSelect, setMediumSelect] = useState("");
+
+  const trash = (newList) => {
+    setWatchplanList(newList)
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -85,11 +96,12 @@ function App() {
         <Route exact path="/generate">
           <Generate
             watchplan={(input) => setWatchplanList(input)}
+            // watchplan={(input) => testWatchPlan = input}
             medium={(input) => setMediumSelect(input)}
           />
         </Route>
         <Route exact path="/watchplan">
-          <Watchplan watchplan={watchplanList} medium={mediumSelect}/>
+          <Watchplan watchplan={watchplanList} medium={mediumSelect} trash={trash}/>
         </Route>
         <Route exact path="/contact">
           <Contact />

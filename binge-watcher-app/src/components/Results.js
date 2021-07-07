@@ -12,6 +12,7 @@ import Box from "@material-ui/core/Box";
 
 let list = [];
 let totalEpisodes = 0;
+let totalPlanList = []
 
 const useStyles = makeStyles({
   btn: {
@@ -48,7 +49,12 @@ export default function Results(props) {
 
   const handleAdd = () => {
     setButtonState({ text: "Added!", disabled: true });
-    props.savePlan(props.suggestions);
+    totalPlanList.unshift({suggestions: props.suggestions, medium: props.medium, runtime: props.runtime})
+    console.log("totalPlanList", totalPlanList)
+    props.savePlan(totalPlanList);
+    
+    // below is the old code
+    // props.savePlan(props.suggestions);
   };
 
   return (
