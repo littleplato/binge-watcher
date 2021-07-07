@@ -1,12 +1,12 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import genresList from "../utils/genresList";
-import { Grid } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 let genreMedium = [...genresList.movie];
 let IDsToPass = "";
@@ -18,8 +18,6 @@ const useStyles = makeStyles({
   },
   checkboxes: {
     marginTop: 20,
-    
-    // display: "block",
   },
   btn : {
     marginTop: 20,

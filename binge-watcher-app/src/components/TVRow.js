@@ -6,9 +6,9 @@ import CardContent from "@material-ui/core/CardContent";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { IconButton } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 
 let genreList = []
@@ -17,7 +17,7 @@ const posterURL = "https://image.tmdb.org/t/p/w780/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 600,
+    // maxWidth: 600,
     marginBottom: 20,
   },
   media: {

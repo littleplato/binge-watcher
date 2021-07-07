@@ -1,8 +1,7 @@
 import Medium from "../components/Medium";
 import Genres from "../components/Genres";
 import React, { useState } from "react";
-import { Typography } from "@material-ui/core";
-import { Container } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 import Time from "../components/Time";
 import Results from "../components/Results";
 import { Helmet } from "react-helmet";
@@ -146,7 +145,7 @@ export default function Generate(props) {
         ) : (
           ""
         )}
-        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} savePlan={savePlan}/>}
+        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} savePlan={savePlan} trashedList={props.trash}/>}
       </Container>
     </div>
   );

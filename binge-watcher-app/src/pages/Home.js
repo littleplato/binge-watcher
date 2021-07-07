@@ -8,6 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { Helmet } from "react-helmet";
 // import "../index.css"
+import Footer from "../components/Footer";
 
 const useStyles = makeStyles({
   title: {
@@ -54,6 +55,7 @@ export default function Home() {
           </Grid>
           <Grid item xs={12} sm={12} md={5}></Grid>
         </Grid>
+        <Footer/>
       </Container>
     </div>
   );

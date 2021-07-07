@@ -81,9 +81,9 @@ export default function Contact() {
         
         </div>
         
-        <RouterLink to="/generate" style={{ textDecoration: "none" }}>
+        {/* <RouterLink to="/generate" style={{ textDecoration: "none" }}>
           <Button variant="outlined" className={classes.btn}>Generate a Plan Instead</Button>
-        </RouterLink>
+        </RouterLink> */}
       </Grid>
     </>
   );

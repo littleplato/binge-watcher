@@ -6,13 +6,12 @@ import Watchplan from "./pages/Watchplan";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
 import Contact from "./pages/Contact";
 import { Link } from "@material-ui/core";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import { Container } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 import "./index.css"
 
 const theme = createMuiTheme({
@@ -50,7 +49,7 @@ let testWatchPlan = [{
 function App() {
   const classes = useStyles();
   const [watchplanList, setWatchplanList] = useState([{
-    suggestions: [],
+    suggestions: [,],
     medium: "none"
   }]);
   const [mediumSelect, setMediumSelect] = useState("");
@@ -96,8 +95,8 @@ function App() {
         <Route exact path="/generate">
           <Generate
             watchplan={(input) => setWatchplanList(input)}
-            // watchplan={(input) => testWatchPlan = input}
             medium={(input) => setMediumSelect(input)}
+            trash={watchplanList}
           />
         </Route>
         <Route exact path="/watchplan">
@@ -108,7 +107,6 @@ function App() {
         </Route>
         <Redirect to="/" />
       </Switch>
-      {/* <Footer/> */}
     </ThemeProvider>
   );
 }

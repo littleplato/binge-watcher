@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import MovieRow from "./MovieRow";
 import TVRow from "./TVRow";
-import { Button } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import Grid from "@material-ui/core/Grid";
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
-import { Container } from "@material-ui/core";
+import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-// let suggestionList = []
 
 let list = [];
-let totalEpisodes = 0;
 let totalPlanList = []
 
 const useStyles = makeStyles({
@@ -47,14 +45,13 @@ export default function Results(props) {
     ));
   }
 
+  // totalPlanList= props.trashedList
+
   const handleAdd = () => {
     setButtonState({ text: "Added!", disabled: true });
     totalPlanList.unshift({suggestions: props.suggestions, medium: props.medium, runtime: props.runtime})
     console.log("totalPlanList", totalPlanList)
     props.savePlan(totalPlanList);
-    
-    // below is the old code
-    // props.savePlan(props.suggestions);
   };
 
   return (

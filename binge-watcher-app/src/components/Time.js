@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Typography } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
 import Slider from "@material-ui/core/Slider";
-import { Grid } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 const timings = {
   movie: {
