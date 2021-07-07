@@ -93,8 +93,8 @@ export default function Intro() {
       {activeStep === steps.length && (
         <Paper square elevation={0} className={classes.resetContainer} style={{ backgroundColor: "transparent" }}>
           <Typography>That's all in three simple steps. Get your binge watching plan!</Typography>
-          <Button onClick={handleReset} className={classes.button}>
-            Wait I didn't catch something, let me Read again
+          <Button onClick={handleReset} className={classes.button} style={{textTransform: 'none'}}>
+            Wait I didn't catch something, let me read that again
           </Button>
         </Paper>
       )}

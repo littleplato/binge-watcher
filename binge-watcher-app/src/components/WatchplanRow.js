@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import { DeleteOutlined } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
@@ -28,9 +26,8 @@ const namePlan = (input) => {
       return `Movie Plan`
     case "tv":
       return `TV Show Plan`
-    break;
     default:
-      return "No name"
+      return `Error`
   } 
 }
 

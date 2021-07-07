@@ -41,15 +41,10 @@ const useStyles = makeStyles({
   },
 });
 
-let testWatchPlan = [{
-  suggestions: [],
-  medium: "none"
-}]
-
 function App() {
   const classes = useStyles();
   const [watchplanList, setWatchplanList] = useState([{
-    suggestions: [,],
+    suggestions: [],
     medium: "none"
   }]);
   const [mediumSelect, setMediumSelect] = useState("");

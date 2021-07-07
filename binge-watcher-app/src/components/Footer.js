@@ -15,7 +15,7 @@ export default function Footer() {
         <div className={classes.footer}>
           <Container >
               <Typography variant="subtitle2" color="inherit">
-                A React application by Wee Jerrick. See source on GitHub. 
+                A React.js application by Wee Jerrick. See source on {<a href="https://github.com/weejerrick/binge-watcher" target="_blank" style={{ color: "black" }} rel="noopener noreferrer">GitHub</a>}. 
               </Typography>
           </Container>
           </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link as RouterLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -53,7 +52,7 @@ export default function Contact() {
           This site is created using React and Material-UI by Jerrick Wee.<br/>
         </Typography>
         <Typography>
-        Film and TV data by {<a href="https://www.themoviedb.org/" style={{ color: "black" }}>TMDB API</a>}. Favicon by {<a href="https://www.flaticon.com/authors/iconixar" style={{ color: "black" }}>iconixar</a>}.
+        Film and TV data by {<a href="https://www.themoviedb.org/" target="_blank" style={{ color: "black" }} rel="noopener noreferrer">TMDB API</a>}. Favicon by {<a href="https://www.flaticon.com/authors/iconixar" target="_blank" style={{ color: "black" }} rel="noopener noreferrer">iconixar</a>}.
         </Typography>
         <div className={classes.btn}>
         <Button

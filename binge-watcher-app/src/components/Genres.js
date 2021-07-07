@@ -45,7 +45,7 @@ export default function Genres(props) {
       }
     }
     console.log(IDsToPass === "");
-    {props.handleGenre(IDsToPass)}
+    props.handleGenre(IDsToPass)
   };
 
   const checkboxes = genreMedium.map((genre) => (
