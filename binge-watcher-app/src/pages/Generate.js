@@ -5,6 +5,7 @@ import { Typography } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import Time from "../components/Time";
 import Results from "../components/Results";
+import { Helmet } from "react-helmet";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -123,6 +124,11 @@ export default function Generate(props) {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Binge Watcher - Generate a plan</title>
+      </Helmet>
+
       <Container>
         
         {mediumSelection === "show" ? (

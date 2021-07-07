@@ -6,6 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 import Intro from "../components/Intro";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+import { Helmet } from "react-helmet";
 // import "../index.css"
 
 const useStyles = makeStyles({
@@ -26,22 +27,26 @@ export default function Home() {
 
   return (
     <div className="HomeBG">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Binge Watcher</title>
+      </Helmet>
       <Container>
         <Grid container spacing={3} className={classes.bottom} style={{ minHeight: "100vh" }}>
           <Grid item xs={12} sm={12} md={7}>
             <Container>
               <Typography variant="h4" className={classes.title} gutterBottom>
-                Welcome to The Binge Watcher
+                Welcome to Binge Watcher
               </Typography>
               <Typography gutterBottom>
-                The Binge Watcher is an optimiser app for decision-paralyzed
-                binge watchers. I help free more of your time to binge watch
+                Binge Watcher is an optimiser app for decision-paralyzed
+                binge watchers. The app helps free more of your time to binge watch
                 shows. All shows here only for flat-rate streaming services,
                 such as Netflix and Disney Plus.
               </Typography>
               <Intro />
               <RouterLink to="/generate" style={{ textDecoration: "none" }}>
-                <Button variant="outlined" className={classes.btn}>
+                <Button variant="outlined" size="large" className={classes.btn}>
                   Generate a Plan!
                 </Button>
               </RouterLink>

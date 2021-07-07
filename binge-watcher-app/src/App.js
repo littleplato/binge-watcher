@@ -28,7 +28,6 @@ const theme = createMuiTheme({
     fontWeightMedium: 500,
     fontWeightBold: 700,
   },
-
 });
 
 const useStyles = makeStyles({
@@ -56,7 +55,7 @@ function App() {
         <Toolbar>
           <Typography variant="h5" className={classes.logo}>
             <Link component={RouterLink} color="inherit" to="/" style={{ textDecoration: 'none' }}>
-              The Binge Watcher
+              Binge Watcher
             </Link>
           </Typography>
           <Typography className={classes.link}>

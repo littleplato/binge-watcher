@@ -10,14 +10,14 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: 20,
+    marginBottom: 20,
   },
   media: {
     height: 0,
     paddingTop: "56.25%",
   },
   clicked: {
-    marginTop: 20,
+    marginBottom: 20,
     backgroundColor: "#f1f1f1",
   }
 }));
