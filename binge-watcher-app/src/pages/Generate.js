@@ -31,7 +31,7 @@ const detailedURL = {
 let fullShowData = [];
 let curatedShows = []
 
-export default function Generate() {
+export default function Generate(props) {
   const [mediumSelection, setMediumSelection] = useState("show");
   const [genreSelection, setGenreSelection] = useState(null);
   const [timeSelection, setTimeSelection] = useState(0);
@@ -45,14 +45,22 @@ export default function Generate() {
       ? alert("please select a category")
       : setMediumSelection(input);
     console.log("medium selected:", input);
+    fullShowData = []
+    curatedShows = []
   };
 
   const handleGenre = (input) => {
     input === ""
       ? alert("please select at least one genre")
       : setGenreSelection(input.join("|"));
-    console.log("geners passed:", input.join("|"));
+    // console.log("geners passed:", input.join("|"));
   };
+
+  const savePlan = (suggestedWatchplan) => {
+    props.watchplan(suggestedWatchplan)
+    props.medium(mediumSelection)
+    console.log(mediumSelection)
+  }
 
   //////////////////////////////////////
   // API Fetch and run time calculation
@@ -94,7 +102,7 @@ export default function Generate() {
         } 
         else if (mediumSelection==="tv") {
           for (const tvData of fullShowData) {
-          if (runtime < tempTime * 60 * 10) {
+          if (runtime < tempTime * 60 * 12) {
             curatedShows.push(tvData)
             runtime +=
             (tvData.episode_run_time.length > 0
@@ -107,8 +115,6 @@ export default function Generate() {
       }
       runTimeTotal = runtime
       setSuggestions(curatedShows)
-      console.log("HERE1", curatedShows)
-      console.log("here2", suggestions)
       };
       detailsFetch();
     };
@@ -118,7 +124,7 @@ export default function Generate() {
   return (
     <div>
       <Container>
-        <Typography variant="h3" gutterBottom>Generate Watchplan</Typography>
+        
         {mediumSelection === "show" ? (
           <Medium handleMedium={handleMedium} />
         ) : (
@@ -134,7 +140,7 @@ export default function Generate() {
         ) : (
           ""
         )}
-        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal}/>}
+        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} savePlan={savePlan}/>}
       </Container>
     </div>
   );

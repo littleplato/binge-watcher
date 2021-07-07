@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import genresList from "../utils/genresList";
+import { Grid } from "@material-ui/core";
 
 let genreMedium = [...genresList.movie];
 let IDsToPass = "";
@@ -13,11 +14,17 @@ let IDsToPass = "";
 const useStyles = makeStyles({
   question: {
     marginTop: 20,
+    marginBottom: 10,
   },
   checkboxes: {
-    marginBottom: 10,
-    display: "block",
+    marginTop: 20,
+    
+    // display: "block",
   },
+  btn : {
+    marginTop: 20,
+    marginLeft: 138,
+  }
 });
 
 export default function Genres(props) {
@@ -47,32 +54,41 @@ export default function Genres(props) {
     <FormControlLabel
       name={genre.key}
       value={genre.IDs}
-      control={<Checkbox />}
+      control={<Checkbox color="primary"/>}
       label={genre.name}
     />
   ));
 
   return (
-    <div>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: "60vh" }}
+    >
       <Typography variant="h6" className={classes.question}>
         What kinds of shows do you like to watch?
       </Typography>
 
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <form noValidate autoComplete="off" onSubmit={handleSubmit} style={{alignItems: 'center'}}>
         {checkboxes}
         <br />
 
         <Button
-          className={classes.question}
+          className={classes.btn}
           type="submit"
           variant="contained"
           color="primary"
-          //   onClick={() => props.handleGenre()}
           endIcon={<KeyboardArrowRightIcon />}
         >
           Next
         </Button>
       </form>
-    </div>
+      <Typography variant="body2" className={classes.question}>
+          2/3
+        </Typography>
+    </Grid>
   );
 }

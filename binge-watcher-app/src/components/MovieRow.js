@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import { DeleteOutlined } from "@material-ui/icons";
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { IconButton } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { Button } from "@material-ui/core";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
-import {format} from 'date-fns'
+
+let genreList = []
 
 const posterURL = "https://image.tmdb.org/t/p/w780/";
 
@@ -27,14 +28,25 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MovieRow({ data }) {
   const classes = useStyles();
+  const [heartIcon, setHeartIcon] = useState({state: "unloved", icon: <FavoriteBorderIcon />})
+
+  const toggleHeart = () => {
+    if(heartIcon.state === "unloved") {
+      setHeartIcon({state: "loved", icon: <FavoriteIcon className={classes.heart} style={{ color: "secondary" }}/>})
+    } else if (heartIcon.state === "loved") {
+      setHeartIcon({state: "unloved", icon: <FavoriteBorderIcon/>})
+    }
+  }
+
+  genreList = data.genres.map(genre => genre.name).join(", ")
+
   return (
     <div>
       <Card className={classes.root}>
-        <CardActionArea>
           <CardHeader
             action={
-              <IconButton>
-                <DeleteOutlined />
+              <IconButton onClick={toggleHeart} >
+                {heartIcon.icon}
               </IconButton>
             }
             title={data.title}
@@ -46,15 +58,16 @@ export default function MovieRow({ data }) {
             title={data.title}
           />
           <CardContent>
+          <Typography variant="h6" gutterBottom>
+            Genres: {genreList}
+            </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               {data.overview}
             </Typography>
           </CardContent>
-        </CardActionArea>
+ 
         <CardActions>
-          <Button size="small" color="primary">
-            Watch Trailer
-          </Button>
+
           <Button
             size="small"
             color="primary"

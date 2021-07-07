@@ -4,6 +4,7 @@ import { Button } from "@material-ui/core";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
 import Slider from "@material-ui/core/Slider";
+import { Grid } from "@material-ui/core";
 
 const timings = {
   movie: {
@@ -36,7 +37,14 @@ export default function Time(props) {
   const [setTime, setSetTime] = useState(timings[props.medium].default);
 
   return (
-    <div>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justify="center"
+      style={{ minHeight: "60vh" }}
+    >
       <Typography variant="h6" gutterBottom className={classes.question}>
         How much time do you have (in {timings[props.medium].unit})?
       </Typography>
@@ -64,6 +72,9 @@ export default function Time(props) {
       >
         Fetch Shows!
       </Button>
-    </div>
+      <Typography variant="body2" className={classes.question}>
+          3/3
+        </Typography>
+    </Grid>
   );
 }
