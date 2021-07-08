@@ -13,10 +13,7 @@ import { Link } from "@material-ui/core";
 import Home from "./pages/Home";
 import Container from "@material-ui/core/Container";
 import "./index.css"
-
-import PropTypes from "prop-types";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Box from "@material-ui/core/Box";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
