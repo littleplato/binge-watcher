@@ -41,6 +41,11 @@ const useStyles = makeStyles({
   },
 });
 
+const initList = [{
+  suggestions: [],
+  medium: "none"
+}]
+
 function App() {
   const classes = useStyles();
   const [watchplanList, setWatchplanList] = useState([{
@@ -49,8 +54,11 @@ function App() {
   }]);
   const [mediumSelect, setMediumSelect] = useState("");
 
+  const [newWatchplan, setNewWatchplan] = useState([])
+
   const trash = (newList) => {
-    setWatchplanList(newList)
+    setNewWatchplan(newList)
+    console.log(newWatchplan)
   }
 
   return (
@@ -92,10 +100,12 @@ function App() {
             watchplan={(input) => setWatchplanList(input)}
             medium={(input) => setMediumSelect(input)}
             trash={watchplanList}
+            saveWatchplan={(input) => setNewWatchplan([input, ...newWatchplan])}
+            // saveWatchplan={(input) => console.log("saveWatchPlab", input)}
           />
         </Route>
         <Route exact path="/watchplan">
-          <Watchplan watchplan={watchplanList} medium={mediumSelect} trash={trash}/>
+          <Watchplan watchplan={watchplanList} medium={mediumSelect} trash={trash} newWatchplan={newWatchplan} />
         </Route>
         <Route exact path="/contact">
           <Contact />

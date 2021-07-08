@@ -10,7 +10,7 @@ import EmptyPlan from "../components/EmptyPlan"
 let createRows = "";
 
 export default function Watchplan(props) {
-  const [planList, setPlanList] = useState(props.watchplan);
+  const [planList, setPlanList] = useState(props.newWatchplan);
   const [selectedPlan, setSelectedPlan] = useState()
 
   const handleTrash = (index) => {
@@ -38,7 +38,7 @@ export default function Watchplan(props) {
       <Box pt={3}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={5}>
-            {props.watchplan[0]?.medium !== "none" ? createRows : <EmptyPlan/>}
+            {planList.length > 0 ? createRows : <EmptyPlan/>}
             {/* {createRows} */}
           </Grid>
           <Grid item xs={12} sm={12} md={7}>

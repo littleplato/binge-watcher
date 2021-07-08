@@ -145,7 +145,7 @@ export default function Generate(props) {
         ) : (
           ""
         )}
-        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} savePlan={savePlan} trashedList={props.trash}/>}
+        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} savePlan={savePlan} saveWatchplan={(newPlan)=>props.saveWatchplan(newPlan)}/>}
       </Container>
     </div>
   );

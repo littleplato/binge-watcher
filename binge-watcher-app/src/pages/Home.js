@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
   bottom: {
     marginTop: 30,
-    paddingBottom: 100
+    paddingBottom: 10
   },
 });
 
