@@ -47,9 +47,6 @@ export default function Results(props) {
 
   const handleAdd = () => {
     setButtonState({ text: "Added!", disabled: true });
-    totalPlanList.unshift({suggestions: props.suggestions, medium: props.medium, runtime: props.runtime})
-    console.log("totalPlanList", totalPlanList)
-    props.savePlan(totalPlanList);
     props.saveWatchplan({suggestions: props.suggestions, medium: props.medium, runtime: props.runtime})
   };
 

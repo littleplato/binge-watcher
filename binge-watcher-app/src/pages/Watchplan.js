@@ -39,10 +39,9 @@ export default function Watchplan(props) {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={5}>
             {planList.length > 0 ? createRows : <EmptyPlan/>}
-            {/* {createRows} */}
           </Grid>
           <Grid item xs={12} sm={12} md={7}>
-            <WatchplanDisplay fullData={props.watchplan} selectedPlan={selectedPlan}/>
+            <WatchplanDisplay fullData={props.newWatchplan} selectedPlan={selectedPlan}/>
           </Grid>
         </Grid>
       </Box>

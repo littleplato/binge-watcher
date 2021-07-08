@@ -53,14 +53,7 @@ export default function Generate(props) {
     input === ""
       ? alert("please select at least one genre")
       : setGenreSelection(input.join("|"));
-    // console.log("geners passed:", input.join("|"));
   };
-
-  const savePlan = (suggestedWatchplan) => {
-    props.watchplan(suggestedWatchplan)
-    props.medium(mediumSelection)
-    console.log(mediumSelection)
-  }
 
   //////////////////////////////////////
   // API Fetch and run time calculation
@@ -145,7 +138,7 @@ export default function Generate(props) {
         ) : (
           ""
         )}
-        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} savePlan={savePlan} saveWatchplan={(newPlan)=>props.saveWatchplan(newPlan)}/>}
+        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} saveWatchplan={(newPlan)=>props.saveWatchplan(newPlan)}/>}
       </Container>
     </div>
   );
