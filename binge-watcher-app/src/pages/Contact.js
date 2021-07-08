@@ -49,40 +49,60 @@ export default function Contact() {
           Made with love in Singapore.
         </Typography>
         <Typography>
-          This site is created using React and Material-UI by Jerrick Wee.<br/>
+          This site is created using React and Material-UI.
+          <br />
         </Typography>
         <Typography>
-        Film and TV data by {<a href="https://www.themoviedb.org/" target="_blank" style={{ color: "black" }} rel="noopener noreferrer">TMDB API</a>}. Favicon by {<a href="https://www.flaticon.com/authors/iconixar" target="_blank" style={{ color: "black" }} rel="noopener noreferrer">iconixar</a>}.
+          Film and TV data by{" "}
+          {
+            <a
+              href="https://www.themoviedb.org/"
+              target="_blank"
+              style={{ color: "black" }}
+              rel="noopener noreferrer"
+            >
+              TMDB API
+            </a>
+          }
+          . Favicon by{" "}
+          {
+            <a
+              href="https://www.flaticon.com/authors/iconixar"
+              target="_blank"
+              style={{ color: "black" }}
+              rel="noopener noreferrer"
+            >
+              iconixar
+            </a>
+          }
+          .
         </Typography>
         <div className={classes.btn}>
-        <Button
-        // className={classes.btn}
-        href="https://www.linkedin.com/in/wee-jerrick/"
-        target="_blank"
-        type="submit"
-        variant="contained"
-        color="primary"
-        startIcon={<LinkedInIcon />}
-      >
-        LinkedIn
-      </Button>
-      <Button
-        className={classes.social}
-        href="https://github.com/weejerrick"
-        target="_blank"
-        type="submit"
-        variant="contained"
-        color="primary"
-        startIcon={<GitHubIcon />}
-      >
-        GitHub
-      </Button>
-        
+          <Button
+            // className={classes.btn}
+            href="https://www.linkedin.com/in/wee-jerrick/"
+            target="_blank"
+            type="submit"
+            variant="contained"
+            color="primary"
+            startIcon={<LinkedInIcon />}
+            style={{textTransform: 'none'}}
+          >
+            LinkedIn
+          </Button>
+          <Button
+            className={classes.social}
+            href="https://github.com/weejerrick"
+            target="_blank"
+            type="submit"
+            variant="contained"
+            color="primary"
+            startIcon={<GitHubIcon />}
+            style={{textTransform: 'none'}}
+          >
+            GitHub
+          </Button>
         </div>
-        
-        {/* <RouterLink to="/generate" style={{ textDecoration: "none" }}>
-          <Button variant="outlined" className={classes.btn}>Generate a Plan Instead</Button>
-        </RouterLink> */}
       </Grid>
     </>
   );

@@ -44,7 +44,7 @@ export default function Generate(props) {
   /////////////////////
   const handleMedium = (input) => {
     input === ""
-      ? alert("please select a category")
+      ? alert("Please select a category.")
       : setMediumSelection(input);
     console.log("medium selected:", input);
     fullShowData = []
@@ -53,7 +53,7 @@ export default function Generate(props) {
 
   const handleGenre = (input) => {
     input === ""
-      ? alert("please select at least one genre")
+      ? alert("Please select at least one option.")
       : setGenreSelection(input.join("|"));
   };
 
@@ -110,7 +110,7 @@ export default function Generate(props) {
       }
       runTimeTotal = runtime
       setSuggestions(curatedShows)
-      setStatus("We have constructed a watchplan for you!")
+      setStatus("Here's a watchplan made specially for you!")
       };
       detailsFetch();
     };

@@ -32,11 +32,11 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return `Every binge watcher is unique, and thus we begin first by knowing more about you. We only ask three easy questions. Most importantly, you must know how much time you have to binge watch!`;
+      return `Every binge watcher is unique, and thus we begin by knowing more about you with just three easy questions. No thinking required.`;
     case 1:
-      return 'Once you have given us your preference, the app will construct an optimised plan for your binge-watching pleasure. No thinking required. ';
+      return 'Once you have selected your preference, the app will construct an optimised plan for your binge-watching pleasure.  ';
     case 2:
-      return `When you receive our recommendations, you can save them to the watchplan, and generate a few others if you want other combinations of preferences. (We understand fickleness, and also split-personalities.)`;
+      return `When you receive the recommendations, you can save them to the watchplan. Alternatively, you can generate a few others if you want other combinations of preferences.`;
     default:
       return 'Unknown step';
   }

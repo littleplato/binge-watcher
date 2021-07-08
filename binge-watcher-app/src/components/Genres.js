@@ -45,7 +45,7 @@ export default function Genres(props) {
         IDsToPass = [...IDsToPass, ...genre.IDs];
       }
     }
-    console.log(IDsToPass === "");
+    // console.log(IDsToPass === "");
     props.handleGenre(IDsToPass)
   };
 

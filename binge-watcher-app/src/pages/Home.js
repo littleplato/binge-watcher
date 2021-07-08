@@ -42,7 +42,7 @@ export default function Home() {
               <Typography gutterBottom>
                 Binge Watcher is an optimiser app for decision-paralyzed
                 binge watchers. The app helps free more of your time to binge watch
-                shows. All shows here only for flat-rate streaming services,
+                shows. All movies and TV shows displayed here are from flat-rate streaming services,
                 such as Netflix and Disney Plus.
               </Typography>
               <Intro />

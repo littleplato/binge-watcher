@@ -1,10 +1,10 @@
 # Binge Watcher
 
-Binge Watcher is an optimiser app for decision-paralyzed binge watchers.
+Binge Watcher is a single-page application for users to optimise their binge-watching plans with shows from popular streaming services.
 
 ## About
 
-The app is a single-page application and is modelled after a Campaign Budget Optimiser (CBO). A CBO takes in a series of inputs and a numerical constraint to output a single return.
+The app is an optimisation application modelled after a Campaign Budget Optimiser (CBO). A CBO takes in a series of inputs and a numerical constraint to output a single return.
 The inputs are passed through a conditional control statement algorithm at each stage.
 The structure of the input is best represented as a decision tree.
 
@@ -26,13 +26,14 @@ The structure of the input is best represented as a decision tree.
 
 * A user should be able to understand intuitively what the site is about.
 * A user should be able to select multiple genre checkboxes.
-* A user should be able to select their availability using a JS-based slider.
-* A user should be able to select their medium preference in a dropdown list.
+* A user should be able to select their availability using a JavaScript-based slider.
+* A user should be able to select their medium preference from the radio buttons.
+* A user should be only doing one thing at a time on a page or component render. 
 * A user should be able to see a viable binge-watching plan upon submission.
 * For each item in the binge-watching plan, a user should see:
-    * Title of show
-    * Short writeup
-    * Image
+    * Title of Show
+    * Short Writeup
+    * Poster Image of Show
     * Launch Date of Show
     * Show Genres
 * A user should be able to add the watching plan to a watchlist.
@@ -41,13 +42,14 @@ The structure of the input is best represented as a decision tree.
 
 ## Planning and Development Process
 
-The project is broken to two main parts: the recommendations generator and the watchplan. 
-1. _Recommendations Generator_. The recommendations generator consists of two further subparts. One, the app takes in the inputs from the user; and two, the app uses the inputs from the user to fetch the required data from the API. The first thing I did was to study the functions of the API, and thereafter begin building the algorithm to generate the recommendations.
-1. _Watchplan_. With the data already available from Part 1, building the watchplan is a simple shopping cart problem.  
+The project was broken down to three general parts. 
+1. _API_. The first part is exploring the in-built functionalities of the API, and checking if the API works according to specification upon deployment.
+1. _Recommendations Generator_. The generator is composed of three form input components, each with their conditional control statement algorithm, and one output component. These were dealt with sequentially. 
+1. _Watchplan_. With the data generated from Part 1 and 2, building the watchplan is a simple shopping cart problem.  
 
 ### Problem-Solving Strategy
 
-_Divide and Conquer_. Trite, but this is great with React: Once I've identified the most atomic component, I build them straightaway, and from there slowly collased the components to their proper functions.
+_Divide and Conquer_. Trite, but this is great with React: Once I've identified the most atomic components, I built them rightaway, and from there slowly collased the components to their proper functions.
 
 ## API used
 
