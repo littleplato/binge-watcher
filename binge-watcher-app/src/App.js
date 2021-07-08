@@ -41,11 +41,6 @@ const useStyles = makeStyles({
   },
 });
 
-const initList = [{
-  suggestions: [],
-  medium: "none"
-}]
-
 function App() {
   const classes = useStyles();
   const [newWatchplan, setNewWatchplan] = useState([])

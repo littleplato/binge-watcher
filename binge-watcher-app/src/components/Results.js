@@ -10,7 +10,6 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 
 let list = [];
-let totalPlanList = []
 
 const useStyles = makeStyles({
   btn: {
