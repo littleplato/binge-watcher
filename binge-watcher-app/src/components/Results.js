@@ -8,12 +8,16 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import Fade from "@material-ui/core/Fade";
+import { Link as RouterLink } from "react-router-dom";
+import ListIcon from '@material-ui/icons/List';
+import CreateIcon from '@material-ui/icons/Create';
 
 let list = [];
 
 const useStyles = makeStyles({
   btn: {
-    marginBottom: 20,
+    marginBottom: 40,
   },
   rightGrid: {
     marginLeft: 1,
@@ -21,6 +25,12 @@ const useStyles = makeStyles({
   title: {
     marginBottom: 30,
   },
+  linkOut: {
+    marginLeft: 10,
+  },
+  statsBody: {
+    marginBottom: 20,
+  }
 });
 
 export default function Results(props) {
@@ -53,7 +63,7 @@ export default function Results(props) {
     <div>
       <Box m={1} pt={3} pb={3}>
         <Typography variant="h5">
-          We have constructed a watchplan for you!
+          {props.status}
         </Typography>
       </Box>
       <Grid container spacing={3}>
@@ -62,6 +72,7 @@ export default function Results(props) {
         </Grid>
         <Grid item xs={12} sm={12} md={5}>
           <Container>
+          <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
             <Button
               type="submit"
               variant="contained"
@@ -73,10 +84,15 @@ export default function Results(props) {
             >
               {buttonState.text}
             </Button>
+            </Fade>
 
+            <Fade in={true} timeout={1000}>
             <Typography variant="h4" gutterBottom>
               Statistics
             </Typography>
+            </Fade>
+            <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
+            <div className={classes.statsBody}>
             <Typography variant="subtitle1">
               Show Type: {props.medium === "movie" ? "Movies" : "TV Series"}
               <br />
@@ -90,6 +106,29 @@ export default function Results(props) {
                 ? `${Math.floor(props.runtime / 60)} hours`
                 : `${Math.floor(props.runtime / 720)} days`}
             </Typography>
+            </div></Fade>
+            <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
+            <RouterLink to="/watchplan" style={{ textDecoration: "none", color: "black" }} >
+            <Button
+              variant="contained"
+              color="inherit"
+              startIcon={<ListIcon />}
+              size="small"
+              
+            >
+              Visit Watchplan
+            </Button></RouterLink></Fade>
+            <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
+            <RouterLink to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Button
+              variant="contained"
+              color="inherit"
+              startIcon={<CreateIcon />}
+              size="small"
+              className={classes.linkOut}
+            >
+              Make New Plan
+            </Button></RouterLink></Fade>
           </Container>
         </Grid>
       </Grid>

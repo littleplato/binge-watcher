@@ -5,6 +5,7 @@ import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import { makeStyles } from "@material-ui/core";
 import Slider from "@material-ui/core/Slider";
 import Grid from "@material-ui/core/Grid";
+import Fade from "@material-ui/core/Fade";
 
 const timings = {
   movie: {
@@ -45,9 +46,12 @@ export default function Time(props) {
       justify="center"
       style={{ minHeight: "60vh" }}
     >
+      <Fade in={true} timeout={1000}>
       <Typography variant="h6" gutterBottom className={classes.question}>
         How much time do you have (in {timings[props.medium].unit})?
       </Typography>
+      </Fade>
+ 
       <Slider
         className={classes.slider}
         defaultValue={timings[props.medium].default}
@@ -60,9 +64,12 @@ export default function Time(props) {
         onChange={(_, value) => setSetTime(value)}
       />
       <br />
+
       {setTime} {timings[props.medium].unit}
+ 
       <br />
       <br />
+
       <Button
         type="submit"
         variant="contained"
@@ -72,9 +79,12 @@ export default function Time(props) {
       >
         Fetch Shows!
       </Button>
+      
+
       <Typography variant="body2" className={classes.question}>
           3/3
         </Typography>
+
     </Grid>
   );
 }

@@ -8,6 +8,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Grid from "@material-ui/core/Grid";
+import Fade from "@material-ui/core/Fade";
 
 const useStyles = makeStyles({
   question: {
@@ -39,16 +40,18 @@ export default function Medium(props) {
       justify="center"
       style={{ minHeight: "60vh" }}
     >
-      
+      <Fade in={true} timeout={1000}>
         <Typography variant="body2" className={classes.info}>
           Just a few questions to get us going..
         </Typography>
-   
+        </Fade>
 
+        <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
       <Typography variant="h6" gutterBottom className={classes.question}>
         What is your preferred medium?
       </Typography>
-
+      </Fade>
+      <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
       <FormControl className={classes.radio}>
         <RadioGroup onChange={(event) => (choice = event.target.value)} row>
           <FormControlLabel
@@ -63,7 +66,8 @@ export default function Medium(props) {
           />
         </RadioGroup>
       </FormControl>
-
+      </Fade>
+      <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
       <Button
         // className={classes.btn}
         type="submit"
@@ -74,11 +78,12 @@ export default function Medium(props) {
       >
         Next
       </Button>
-
+      </Fade>
+      <Fade in={true} timeout={1000} style={{ transitionDelay: '500ms' }}>
       <Typography variant="body2" className={classes.counter}>
           1/3
         </Typography>
-
+        </Fade>
     </Grid>
   );
 }

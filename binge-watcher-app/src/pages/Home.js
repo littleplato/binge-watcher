@@ -7,7 +7,7 @@ import Intro from "../components/Intro";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { Helmet } from "react-helmet";
-// import "../index.css"
+import CreateIcon from '@material-ui/icons/Create';
 import Footer from "../components/Footer";
 
 const useStyles = makeStyles({
@@ -47,7 +47,7 @@ export default function Home() {
               </Typography>
               <Intro />
               <RouterLink to="/generate" style={{ textDecoration: "none" }}>
-                <Button variant="outlined" size="large" className={classes.btn}>
+                <Button variant="outlined" size="large" className={classes.btn} startIcon={<CreateIcon />}>
                   Generate a Plan!
                 </Button>
               </RouterLink>

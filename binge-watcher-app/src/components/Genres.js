@@ -7,6 +7,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import genresList from "../utils/genresList";
 import Grid from "@material-ui/core/Grid";
+import Fade from "@material-ui/core/Fade";
 
 let genreMedium = [...genresList.movie];
 let IDsToPass = "";
@@ -66,10 +67,13 @@ export default function Genres(props) {
       justify="center"
       style={{ minHeight: "60vh" }}
     >
+      <Fade in={true} timeout={1000}>
       <Typography variant="h6" className={classes.question}>
         What kinds of shows do you like to watch?
       </Typography>
+      </Fade>
 
+      <Fade in={true} timeout={1000}>
       <form noValidate autoComplete="off" onSubmit={handleSubmit} style={{alignItems: 'center'}}>
         {checkboxes}
         <br />
@@ -84,9 +88,12 @@ export default function Genres(props) {
           Next
         </Button>
       </form>
+      </Fade>
+      <Fade in={true} timeout={1000}>
       <Typography variant="body2" className={classes.question}>
           2/3
         </Typography>
+        </Fade>
     </Grid>
   );
 }

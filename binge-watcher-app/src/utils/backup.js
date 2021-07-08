@@ -5,7 +5,6 @@ import Container from "@material-ui/core/Container";
 import Time from "../components/Time";
 import Results from "../components/Results";
 import { Helmet } from "react-helmet";
-import CircularProgress from '@material-ui/core/CircularProgress';
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -37,7 +36,7 @@ export default function Generate(props) {
   const [genreSelection, setGenreSelection] = useState(null);
   const [timeSelection, setTimeSelection] = useState(0);
   const [suggestions, setSuggestions] = useState([])
-  const [status, setStatus] = useState(<CircularProgress/>);
+  const [status, setStatus] = useState("idle");
 
   /////////////////////
   // All click hanlders
@@ -110,7 +109,6 @@ export default function Generate(props) {
       }
       runTimeTotal = runtime
       setSuggestions(curatedShows)
-      setStatus("We have constructed a watchplan for you!")
       };
       detailsFetch();
     };
@@ -141,7 +139,7 @@ export default function Generate(props) {
         ) : (
           ""
         )}
-        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} saveWatchplan={(newPlan)=>props.saveWatchplan(newPlan)} status={status}/>}
+        {timeSelection !== 0 && <Results medium={mediumSelection} suggestions={suggestions} runtime={runTimeTotal} saveWatchplan={(newPlan)=>props.saveWatchplan(newPlan)}/>}
       </Container>
     </div>
   );
