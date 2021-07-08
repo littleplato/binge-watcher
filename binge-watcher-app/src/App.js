@@ -14,6 +14,13 @@ import Home from "./pages/Home";
 import Container from "@material-ui/core/Container";
 import "./index.css"
 
+import PropTypes from "prop-types";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Box from "@material-ui/core/Box";
+import Fab from "@material-ui/core/Fab";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+import Zoom from "@material-ui/core/Zoom";
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -39,7 +46,45 @@ const useStyles = makeStyles({
   link: {
     marginRight: 20,
   },
+  root: {
+    position: "fixed",
+    bottom: theme.spacing(3),
+    right: theme.spacing(3)
+  },
+  scroller: {
+    marginTop: -63,
+  }
 });
+
+
+function ScrollTop(props) {
+  const { children } = props;
+  const classes = useStyles();
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 100
+  });
+
+  const handleClick = event => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
+
+    if (anchor) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <div onClick={handleClick} role="presentation" className={classes.root}>
+        {children}
+      </div>
+    </Zoom>
+  );
+}
+
+
 
 function App() {
   const classes = useStyles();
@@ -78,6 +123,8 @@ function App() {
         </Toolbar>
         </Container>
       </AppBar>
+      <Toolbar id="back-to-top-anchor" className={classes.scroller}/>
+
 
       <div className={classes.toolbar}></div>
       <Switch>
@@ -97,6 +144,13 @@ function App() {
         </Route>
         <Redirect to="/" />
       </Switch>
+
+      <ScrollTop>
+        <Fab color="primary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUpIcon />
+        </Fab>
+      </ScrollTop>
+
     </ThemeProvider>
   );
 }
