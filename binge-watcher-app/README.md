@@ -17,10 +17,10 @@ The structure of the input is best represented as a decision tree.
 ### Wireframes
 
 #### Wireframe for Input
-![Wireframe1](/public/input.png)
+![Wireframe1](https://raw.githubusercontent.com/weejerrick/binge-watcher/main/binge-watcher-app/public/input.png)
 
 #### Wireframe for Output
-![Wireframe2](/public/output.png)
+![Wireframe2](https://raw.githubusercontent.com/weejerrick/binge-watcher/main/binge-watcher-app/public/output.png)
 
 ### User Stories
 
